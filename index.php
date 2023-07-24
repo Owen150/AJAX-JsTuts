@@ -8,7 +8,15 @@ include 'db.php';
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-
+        $(document).ready(function() {
+            var commentCount = 2;
+            $("#btn").click(function() {
+                commentCount = commentCount + 2;
+                $("#comments").load("load-comments.php", {
+                    commentNewCount: commentCount
+                });
+            });
+        });
     </script>
 </head>
 
@@ -31,7 +39,7 @@ include 'db.php';
         ?>
     </div>
 
-    <button>Show more comments</button>
+    <button id="btn">Show more comments</button>
 </body>
 
 </html>
