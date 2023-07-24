@@ -1,5 +1,9 @@
 <?php
-    $sql = "SELECT * FROM comments LIMIT 2";
+    include 'db.php';
+
+    $commentNewCount = $_POST['commentNewCount'];
+
+    $sql = "SELECT * FROM comments LIMIT $commentNewCount";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
