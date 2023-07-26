@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $.get("test.txt", function(data, status){
+                    $("#test").html(data);
+                    alert(status);
+                });
+            });
+        });
     </script>
-    <title>GET Request</title>
 </head>
 <body>
-    <button>Click me to get data!</button>
+    <button id="btn">Click me to get data!</button>
     <p id="test"></p>
 </body>
 </html>
