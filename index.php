@@ -18,6 +18,7 @@ include 'db.php';
             });
         });
     </script>
+    <title>POST Request</title>
 </head>
 
 <body>
